@@ -8,7 +8,7 @@ import { muiTheme } from '../src';
 
 import { overridings as theme1 } from './.themes/customTheme1';
 import { overridings as theme2 } from './.themes/customTheme2';
-import themeF3, { overridings as theme3 } from './.themes/customTheme3';
+import { overridings as theme3 } from './.themes/customTheme3';
 import { overridings as theme4 } from './.themes/customTheme4';
 import { overridings as theme5 } from './.themes/customTheme5';
 

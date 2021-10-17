@@ -1,10 +1,10 @@
-import { createTheme, adaptV4Theme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 
-export const lightTheme = createTheme(adaptV4Theme({
+export const lightTheme = createTheme({
   palette: {
     primary: {
       main: 'rgb(98, 126, 157)'
     }
   }
-}));
+});

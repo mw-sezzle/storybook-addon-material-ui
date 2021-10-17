@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, StyledEngineProvider, createTheme, adaptV4Theme } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider, createTheme } from '@mui/material/styles';
 
 import withChannel from '../adk/WithChannel';
 import { EVENT_ID_INIT, EVENT_ID_DATA, EVENT_ID_BACK } from '../config';
@@ -7,9 +7,9 @@ import { EVENT_ID_INIT, EVENT_ID_DATA, EVENT_ID_BACK } from '../config';
 const currentTheme = data => {
   try {
     const theme = data.themes[data.themeInd];
-    return createTheme(adaptV4Theme(theme));
+    return createTheme(theme);
   } catch (err) {
-    return createTheme(adaptV4Theme({}));
+    return createTheme({});
   }
 };
 

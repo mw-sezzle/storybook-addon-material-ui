@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import green from '@mui/material/colors/green';
 import purple from '@mui/material/colors/purple';
 import blue from '@mui/material/colors/blue';
@@ -22,4 +22,4 @@ export const overridings = {
   themeName: 'Pale Blue Theme'
 };
 
-export default createMuiTheme(overridings);
+export default createTheme(overridings);

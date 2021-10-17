@@ -24,7 +24,7 @@ export default class MuiTheme extends React.Component {
     this.state = props.initState;
     this.state.themesAppliedList = props.themesAppliedListInit;
     this.state.currentTheme = {};
-    // this.state.muiTheme = createMuiTheme(props.themesAppliedListInit[props.initState.themeInd]); // Not working yet
+    // this.state.muiTheme = createTheme(props.themesAppliedListInit[props.initState.themeInd]); // Not working yet
     this.state.muiTheme = createTheme();
     this.state.isMount = false;
     this.isChannelData = false;
@@ -84,7 +84,7 @@ export default class MuiTheme extends React.Component {
   changeTheme(ind) {
     this.needComponentUpdate('ThemeSideBar');
     this.setState({
-      // muiTheme: createMuiTheme(this.state.themesAppliedList[ind]),
+      // muiTheme: createTheme(this.state.themesAppliedList[ind]),
       muiTheme: createTheme(),
       themeInd: ind
     });
