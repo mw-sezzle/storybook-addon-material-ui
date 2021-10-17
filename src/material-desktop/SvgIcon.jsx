@@ -19,7 +19,7 @@ export default class SvgIcon extends React.Component {
     super(props, context);
 
     require.ensure([], (require) => {
-      const Icon = require('@material-ui/core/SvgIcon');
+      const Icon = require('@mui/material/SvgIcon');
       this.ActionHome = Icon.default;
     });
 

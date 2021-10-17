@@ -12,10 +12,12 @@ const withChannel = ({
   initData,
   panel
 }) => WrappedComponent =>
-  class extends React.Component {
+  (class extends React.Component {
+    // eslint-disable-next-line react/sort-comp
     static displayName = `WithChannel(${getDisplayName(WrappedComponent)})`;
 
     state = {
+      // eslint-disable-next-line react/prop-types
       data: initData || this.props.initData
     };
 
@@ -23,8 +25,11 @@ const withChannel = ({
       EVENT_ID_INIT,
       EVENT_ID_DATA,
       EVENT_ID_BACK,
+      // eslint-disable-next-line react/prop-types
       name: this.props.pointName,
+      // eslint-disable-next-line react/prop-types
       initData: initData || this.props.initData,
+      // eslint-disable-next-line react/prop-types
       isPanel: panel || this.props.panel
     });
 
@@ -43,6 +48,7 @@ const withChannel = ({
     onData = data => this.setState({ data });
 
     render() {
+      // eslint-disable-next-line no-shadow,react/prop-types
       const { pointName, initData, active, ...props } = this.props;
       if (active === false) return null;
       return (
@@ -54,6 +60,6 @@ const withChannel = ({
         />
       );
     }
-  };
+  });
 
 export default withChannel;

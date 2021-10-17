@@ -1,7 +1,7 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import green from '@material-ui/core/colors/green';
-import purple from '@material-ui/core/colors/purple';
-import blue from '@material-ui/core/colors/blue';
+import { createMuiTheme } from '@mui/material/styles';
+import green from '@mui/material/colors/green';
+import purple from '@mui/material/colors/purple';
+import blue from '@mui/material/colors/blue';
 
 const darkGreen = green[900];
 const accentPurple = purple.A200;

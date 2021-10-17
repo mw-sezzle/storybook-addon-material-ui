@@ -1,14 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import createPalette from '@material-ui/core/styles/createPalette';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
-import red from '@material-ui/core/colors/red';
-
-import { EVENT_ID_DATA, EVENT_ID_BACK } from '../config';
-import { lightTheme } from '../.themes';
+import { MuiThemeProvider, createTheme } from '@mui/material/styles';
 // future: [x] remove ThemeToolbar
 // import ThemeSideBar from '../components/ThemeSideBar';
 // const stringify = require('json-stringify-safe');
@@ -18,7 +11,6 @@ const propTypes = {
   story: PropTypes.shape().isRequired,
   onChangeState: PropTypes.func.isRequired,
   onThemeOverride: PropTypes.func.isRequired,
-  themesInitList: PropTypes.array.isRequired,
   // themeListRender: PropTypes.func.isRequired,
   initState: PropTypes.shape().isRequired,
   // channel: PropTypes.object.isRequired
@@ -33,7 +25,7 @@ export default class MuiTheme extends React.Component {
     this.state.themesAppliedList = props.themesAppliedListInit;
     this.state.currentTheme = {};
     // this.state.muiTheme = createMuiTheme(props.themesAppliedListInit[props.initState.themeInd]); // Not working yet
-    this.state.muiTheme = createMuiTheme();
+    this.state.muiTheme = createTheme();
     this.state.isMount = false;
     this.isChannelData = false;
     this.UpdateList = {};
@@ -93,7 +85,7 @@ export default class MuiTheme extends React.Component {
     this.needComponentUpdate('ThemeSideBar');
     this.setState({
       // muiTheme: createMuiTheme(this.state.themesAppliedList[ind]),
-      muiTheme: createMuiTheme(),
+      muiTheme: createTheme(),
       themeInd: ind
     });
   }
@@ -132,7 +124,7 @@ export default class MuiTheme extends React.Component {
   }
 
   render() {
-    const theme = createMuiTheme(this.state.currentTheme);
+    const theme = createTheme(this.state.currentTheme);
 
     return (
       <MuiThemeProvider theme={theme}>

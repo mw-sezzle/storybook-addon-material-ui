@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@mui/material/IconButton';
 
 const propTypes = {
   iconScale: PropTypes.number.isRequired,
@@ -59,10 +59,7 @@ export default class SvgButton extends React.Component {
       >
         <div {...this.butnProp} >
           <div style={{ width: 48 }}>
-            <IconButton
-              tooltip={null}
-              style={{ padding: 0 }}
-            >
+            <IconButton tooltip={null} style={{ padding: 0 }} size="large">
               <div>
                 <div {...this.scaleProp} >
                   {icon}

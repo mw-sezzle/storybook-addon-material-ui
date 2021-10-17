@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { cx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { ObjectInspector } from 'react-inspector';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider, StyledEngineProvider, createTheme, adaptV4Theme } from '@mui/material/styles';
 import MaterialColorPicker from '@usulpro/color-picker';
 
 const sortObjectKeys = (a, b) => {
@@ -79,7 +79,7 @@ export default class Palette extends React.Component {
     this.setState(
       {
         path,
-        editColor: createMuiTheme({ palette }).palette[path[0]][path[1]],
+        editColor: createTheme(adaptV4Theme({ palette })).palette[path[0]][path[1]],
         isPickerOpen
       },
       () => {
@@ -191,16 +191,16 @@ export default class Palette extends React.Component {
   };
 
   render() {
-    const { palette } = createMuiTheme({ palette: this.state.palette });
+    const { palette } = createTheme(adaptV4Theme({ palette: this.state.palette }));
     const colorSet = name =>
       this.renderColorSet(
         palette[name],
         name,
-        this.state.palette.type === 'dark'
+        this.state.palette.mode === 'dark'
       );
 
     return (
-      <PaletteHolder dark={this.state.palette.type === 'dark'}>
+      <PaletteHolder dark={this.state.palette.mode === 'dark'}>
         {colorSet('primary')}
         {colorSet('secondary')}
         {colorSet('error')}

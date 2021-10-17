@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
-import Slider from '@material-ui/core/Slide';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import Slider from '@mui/material/Slide';
 import MaterialColorPicker from '@usulpro/color-picker';
 
 import { CSS_CLASS } from '../';

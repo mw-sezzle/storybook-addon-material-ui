@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { cx, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { ObjectInspector } from 'react-inspector';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider, StyledEngineProvider, createTheme, adaptV4Theme } from '@mui/material/styles';
 
 const sortObjectKeys = (a, b) => {
   if (a === 'themeName') return -2;
@@ -28,7 +28,7 @@ export default ({ theme }) => (
       expandLevel={1}
       expandPaths="$.palette"
       sortObjectKeys={sortObjectKeys}
-      data={createMuiTheme(theme)}
+      data={createTheme(adaptV4Theme(theme))}
     />
   </Holder>
 );

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 import { muiTheme } from '../src';
 
@@ -53,13 +53,13 @@ storiesOf('Material Custom theme', module)
   ))
   .add('Flat buttons', () => (
     <div>
-      <Button variant="flat" color="primary" style={buttonStyle}>
+      <Button variant="text" color="primary" style={buttonStyle}>
         Flat primary
       </Button>
-      <Button variant="flat" color="secondary" style={buttonStyle}>
+      <Button variant="text" color="secondary" style={buttonStyle}>
         Flat secondary
       </Button>
-      <Button variant="flat" style={buttonStyle}>
+      <Button variant="text" style={buttonStyle}>
         Flat default
       </Button>
     </div>

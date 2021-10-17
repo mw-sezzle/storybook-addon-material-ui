@@ -1,23 +1,21 @@
 import React from 'react';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 
 import { EVENT_ID_INIT, EVENT_ID_DATA, EVENT_ID_BACK } from './config';
 import MuiDecorator from './UI/MuiDecorator';
 import { createStore } from './adk/decorator';
 
-const lightBaseTheme = createMuiTheme({
+const lightBaseTheme = createTheme(adaptV4Theme({
   typography: {
-    useNextVariants: true
   }
-});
-const darkBaseTheme = createMuiTheme({
+}));
+const darkBaseTheme = createTheme(adaptV4Theme({
   palette: {
-    type: 'dark'
+    mode: 'dark'
   },
   typography: {
-    useNextVariants: true
   }
-});
+}));
 
 lightBaseTheme.themeName = 'Light Theme';
 darkBaseTheme.themeName = 'Dark Theme';

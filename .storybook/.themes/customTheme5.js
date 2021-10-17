@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import blue from '@material-ui/core/colors/blue';
-import yellow from '@material-ui/core/colors/yellow';
+import { createMuiTheme } from '@mui/material/styles';
+import blue from '@mui/material/colors/blue';
+import yellow from '@mui/material/colors/yellow';
 
 
 export const overridings = {

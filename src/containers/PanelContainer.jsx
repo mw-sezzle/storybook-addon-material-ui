@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider, StyledEngineProvider, createTheme } from '@mui/material/styles';
 import * as beauti from 'js-beautify';
 
 import AddonPanel from '../components/AddonPanel';
@@ -15,7 +15,7 @@ import {
 const { document, window } = global;
 const logger = console;
 
-const lightBaseTheme = createMuiTheme();
+const lightBaseTheme = createTheme();
 
 const PROGRESS_STATUS = {
   'button-clone': 'soon', // todo: [] button_clone
@@ -113,7 +113,7 @@ class PanelContainer extends React.Component {
     // const str = event.target.value;
     try {
       const newTheme = JSON.parse(str);
-      const themesAppliedList = this.state.themesAppliedList;
+      const {themesAppliedList} = this.state;
       themesAppliedList[this.state.themeInd] = newTheme;
       this.setState({
         themesAppliedList,
@@ -195,7 +195,7 @@ ${window.btoa(this.getCurrentTheme(4))}`;
       }
     );
 
-  dataChannelSend = data => {
+  dataChannelSend = () => {
     if (this.isChannelData) return false;
     // this.props.channel.emit(EVENT_ID_BACK, data);
     try {
@@ -235,26 +235,28 @@ ${window.btoa(this.getCurrentTheme(4))}`;
 
   render() {
     return this.state.isReady ? (
-      <MuiThemeProvider theme={this.muiTheme}>
-        <AddonPanel
-          themesNameList={this.state.themesNameList}
-          defautThemeInd={this.state.themeInd}
-          isSideBarOpen={this.state.isSideBarOpen}
-          onThemeSelect={this.onThemeSelect}
-          onToggleSideBar={this.onToggleSideBar}
-          themeJSON={
-            this.state.isThemeInvalid || this.state.isThemeEditing
-              ? this.state.themeString
-              : this.getCurrentTheme(1)
-          }
-          isThemeInvalid={this.state.isThemeInvalid}
-          onThemeEditing={this.onThemeEditing}
-          onChangeTheme={this.onChangeTheme}
-          onDnLoadTheme={this.onDnLoadTheme}
-          onCloneTheme={this.onCloneTheme}
-          onCleanTheme={this.onCleanTheme}
-        />
-      </MuiThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={this.muiTheme}>
+          <AddonPanel
+            themesNameList={this.state.themesNameList}
+            defautThemeInd={this.state.themeInd}
+            isSideBarOpen={this.state.isSideBarOpen}
+            onThemeSelect={this.onThemeSelect}
+            onToggleSideBar={this.onToggleSideBar}
+            themeJSON={
+              this.state.isThemeInvalid || this.state.isThemeEditing
+                ? this.state.themeString
+                : this.getCurrentTheme(1)
+            }
+            isThemeInvalid={this.state.isThemeInvalid}
+            onThemeEditing={this.onThemeEditing}
+            onChangeTheme={this.onChangeTheme}
+            onDnLoadTheme={this.onDnLoadTheme}
+            onCloneTheme={this.onCloneTheme}
+            onCleanTheme={this.onCleanTheme}
+          />
+        </ThemeProvider>
+      </StyledEngineProvider>
     ) : (
       <div
         style={{

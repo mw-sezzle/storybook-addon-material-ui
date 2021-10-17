@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
-import IconCopy from '@material-ui/icons/ContentCopy';
-import IconSwch from '@material-ui/icons/SwitchCamera';
+import Paper from '@mui/material/Paper';
+import IconCopy from '@mui/icons-material/ContentCopy';
+import IconSwch from '@mui/icons-material/SwitchCamera';
 
 import SclToggle from '../material-desktop/SclToggle';
 import SvgButton from '../material-desktop/SvgButton';

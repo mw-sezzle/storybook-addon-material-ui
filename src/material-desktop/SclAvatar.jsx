@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Chip from '@material-ui/core/Chip';
-import Avatar from '@material-ui/core/Avatar';
+import Chip from '@mui/material/Chip';
+import Avatar from '@mui/material/Avatar';
 
 const defaultProps = {
   scale: 0.8,
