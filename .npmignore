@@ -7,3 +7,11 @@ docs
 .eslintrc
 .scripts
 .storybook
+.yarn
+*.tgz
+*.log
+.github
+.eslintignore
+.eslintrc.js
+.yarnrc.yml
+public
